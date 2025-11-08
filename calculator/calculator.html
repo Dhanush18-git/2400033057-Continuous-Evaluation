@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Calculator</title>
+  <style>
+    body { font-family: Arial; background: #fafbfc; padding: 40px; }
+    .calc { padding: 20px; background: #fff; border-radius: 12px; box-shadow: 0 4px 16px #ccc; width: 260px; margin: auto;}
+    input[type="number"] { width: 48px; margin: 3px;}
+    button { margin: 6px; }
+  </style>
+</head>
+<body>
+  <div class="calc">
+    <h2>Calculator</h2>
+    <input type="number" id="num1"> 
+    <input type="number" id="num2"><br>
+    <button onclick="calc('add')">+</button>
+    <button onclick="calc('sub')">-</button>
+    <button onclick="calc('mul')">*</button>
+    <button onclick="calc('div')">/</button>
+    <p id="result"></p>
+  </div>
+  <script>
+    function calc(op) {
+      var a = parseFloat(document.getElementById('num1').value) || 0;
+      var b = parseFloat(document.getElementById('num2').value) || 0;
+      var res = 0;
+      if(op==='add') res = a+b;
+      if(op==='sub') res = a-b;
+      if(op==='mul') res = a*b;
+      if(op==='div') res = b!==0 ? a/b : 'Error';
+      document.getElementById('result').innerText = 'Result: ' + res;
+    }
+  </script>
+</body>
+</html>
