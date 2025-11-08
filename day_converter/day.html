@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Day Name Finder</title>
+  <style>
+    body { font-family: Arial; background: #eef3f9; padding: 36px; }
+    .box { background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 3px 14px #bbb; width: 260px; margin: auto; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Find Day Name</h2>
+    <label>Day Number (1-7):</label>
+    <input type="number" id="daynum" min="1" max="7">
+    <button onclick="showDay()">Show Day Name</button>
+    <p id="dayname"></p>
+  </div>
+  <script>
+    function showDay() {
+      var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+      var num = parseInt(document.getElementById('daynum').value,10);
+      var name = (num>=1 && num<=7) ? days[num-1] : "Invalid Day Number!";
+      document.getElementById('dayname').innerText = 'Day Name: ' + name;
+    }
+  </script>
+</body>
+</html>
