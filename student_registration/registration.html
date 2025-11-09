@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Registration</title>
+  <link rel="stylesheet" href="registration.css">
+</head>
+<body>
+  <div class="form-container">
+    <h2>Student Registration</h2>
+    <form id="registrationForm">
+      <label for="name">Name:
+        <input type="text" id="name" name="name" required>
+      </label>
+      <label for="email">Email:
+        <input type="email" id="email" name="email" required>
+      </label>
+      <button type="submit">Register</button>
+    </form>
+    <div id="result" class="result" style="display: none;">
+      <h3>Submitted Details</h3>
+      <p><strong>Name:</strong> <span id="displayName"></span></p>
+      <p><strong>Email:</strong> <span id="displayEmail"></span></p>
+    </div>
+  </div>
+  <script>
+    const form = document.getElementById('registrationForm');
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      document.getElementById('displayName').textContent = name;
+      document.getElementById('displayEmail').textContent = email;
+      document.getElementById('result').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
